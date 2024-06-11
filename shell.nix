@@ -2,6 +2,6 @@
 pkgs.mkShell {
   packages = with pkgs; [
     gnumake
-	dpkg
+    dpkg
   ];
 }
