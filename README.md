@@ -12,7 +12,7 @@ echo "Content with $ENV_VAR" | envrpl
 
 From a file
 ```bash
-export MY_VAR="my value"
+echo "Hello $USER" > file.txt
 envrpl < file.txt
 ```
 
