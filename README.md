@@ -25,12 +25,12 @@ Debian package
 VERSION=0.0.1
 
 # Download the latest release
-wget https://github.com/GDWR/envrpl/releases/download/v$VERSION/envrpl_$VERSION_amd64.deb
+wget https://github.com/GDWR/envrpl/releases/download/v${VERSION}/envrpl_${VERSION}_amd64.deb
 
 # Install the package
-sudo dpkg -i envrpl_$VERSION_amd64.deb
+sudo dpkg -i envrpl_${VERSION}_amd64.deb
 
 # Clean up
-rm envrpl_0.0.1_amd64.deb
+rm envrpl_${VERSION}_amd64.deb
 ```
 
