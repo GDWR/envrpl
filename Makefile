@@ -19,6 +19,7 @@ $(BUILD_DIR)/envrpl_$(VERSION)_$(ARCH): $(DIST_DIR)/envrpl
 	mkdir -p $@/DEBIAN
 	
 	cp $(DIST_DIR)/envrpl $@/usr/bin/envrpl
+	chown root:root $@/usr/bin/envrpl
 	
 	echo "Package: envrpl" > $@/DEBIAN/control
 	echo "Description: Replace environment variables in files" >> $@/DEBIAN/control
