@@ -19,13 +19,16 @@ $(BUILD_DIR)/envrpl_$(VERSION)_$(ARCH): $(DIST_DIR)/envrpl
 	mkdir -p $@/DEBIAN
 	
 	cp $(DIST_DIR)/envrpl $@/usr/bin/envrpl
-	chown root:root $@/usr/bin/envrpl
 	
 	echo "Package: envrpl" > $@/DEBIAN/control
 	echo "Description: Replace environment variables in files" >> $@/DEBIAN/control
 	echo "Version: $(VERSION)" >> $@/DEBIAN/control
 	echo "Architecture: $(ARCH)" >> $@/DEBIAN/control
 	echo "Maintainer: GDWR <gregory.dwr@gmail.com>" >> $@/DEBIAN/control
+	
+	echo "override_dh_fixperms:" >> $@/DEBIAN/rules
+	echo "	dh_fixperms" >> $@/DEBIAN/rules
+	echo "	chown root:root debian/usr/bin/envrpl" >> $@/DEBIAN/rules
 
 
 $(DIST_DIR)/envrpl: $(BUILD_DIR)/main.o
